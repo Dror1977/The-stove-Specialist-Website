@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('./netlify-deploy'));
+app.use(express.static(path.join(__dirname, 'netlify-deploy')));
+app.use('/assets', express.static(path.join(__dirname, 'netlify-deploy/assets')));
 
 // Email configuration - you'll need to update with your Resend API key
 const resend = new Resend('re_avy1wLzr_LgbuXaAqahqw7exJZENY1kso');
