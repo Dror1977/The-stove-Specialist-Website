@@ -6,32 +6,44 @@
     <title>Privacy Policy - The Stove Specialist</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'lobster': ['Lobster', 'cursive']
+                        'sans': ['Arial', 'Helvetica', 'sans-serif'],
+                        'lobster': ['Lobster', 'cursive'],
+                        'roboto': ['Roboto Slab', 'serif']
+                    },
+                    colors: {
+                        primary: {
+                            500: '#1e3566',
+                            600: '#243340',
+                            700: '#1c2a35'
+                        },
+                        accent: {
+                            500: '#77b13d',
+                            600: '#689936'
+                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 font-roboto font-bold">
     <!-- Header -->
-    <header class="bg-blue-800 text-white py-6">
+    <header class="bg-primary-500 text-white py-6">
         <div class="max-w-4xl mx-auto px-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
                     <img src="./assets/images/logo-white.png" alt="The Stove Specialist Logo" class="h-12 w-auto">
                     <div>
-                        <h1 class="text-2xl font-bold font-lobster">The Stove Specialist</h1>
                         <p class="text-blue-200">Privacy Policy</p>
                     </div>
                 </div>
-                <a href="index.html" class="bg-lime-500 hover:bg-lime-600 text-black px-4 py-2 rounded-lg font-medium transition-colors duration-300">
+                <a href="index.html" class="bg-accent-500 hover:bg-accent-600 text-black px-4 py-2 rounded-lg font-medium transition-colors duration-300">
                     Back to Home
                 </a>
             </div>
