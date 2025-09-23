@@ -2,7 +2,6 @@
 const express = require('express');
 const { Resend } = require('resend');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,8 +9,6 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'netlify-deploy')));
-app.use('/assets', express.static(path.join(__dirname, 'netlify-deploy/assets')));
 
 // Email configuration - you'll need to update with your Resend API key
 const resend = new Resend('re_avy1wLzr_LgbuXaAqahqw7exJZENY1kso');
@@ -132,9 +129,9 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
-// Serve the website
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'netlify-deploy', 'index.html'));
+// Health check endpoint for Vercel
+app.get('/api/health', (_, res) => {
+    res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
 // Start server
